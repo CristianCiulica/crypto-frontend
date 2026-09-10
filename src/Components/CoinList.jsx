@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import CoinCard from "./CoinCard.jsx";
 
 function CoinList() {
 
@@ -9,15 +10,13 @@ function CoinList() {
             .then(response => response.json())
             .then(data=>setCoins(data))
     }, []);
-    console.log(coins)
+
     return (
         <section>
             <h2>Markets</h2>
 
             {coins.map(coin => (
-                <div>
-                    {coin.name}
-                </div>
+                <CoinCard coin={coin} />
             ))}
         </section>
     )
