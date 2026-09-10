@@ -9,6 +9,11 @@ nav {
   gap: 20px;
 }
 
+.coin-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 .coin-card {
   border: 1px solid #ddd;
   padding: 20px;

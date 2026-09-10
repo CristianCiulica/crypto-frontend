@@ -11,11 +11,12 @@ function CoinList() {
             .then(data=>setCoins(data))
     }, []);
 
-    return (
-        <section>
-            <h2>Markets</h2>
+    return (<>
+        <h2>Markets</h2>
+        <section className="coin-list">
             {coins.map(coin => (<CoinCard coin={coin} />))}
         </section>
+        </>
     )
 }
 
