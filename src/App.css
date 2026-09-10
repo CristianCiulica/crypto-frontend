@@ -8,3 +8,10 @@ nav {
   display: flex;
   gap: 20px;
 }
+
+.coin-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+}

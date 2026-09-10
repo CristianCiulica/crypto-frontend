@@ -14,10 +14,7 @@ function CoinList() {
     return (
         <section>
             <h2>Markets</h2>
-
-            {coins.map(coin => (
-                <CoinCard coin={coin} />
-            ))}
+            {coins.map(coin => (<CoinCard coin={coin} />))}
         </section>
     )
 }
