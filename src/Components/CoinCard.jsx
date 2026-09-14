@@ -1,10 +1,13 @@
-function CoinCard({ coin }) {
+function CoinCard({ coin , onSelect}) {
     return (
-        <div className="coin-card">
-            <h3>{coin.name}</h3>
+        <div className="coin-card" onClick={onSelect}>
+            <h3>
+                {coin.name}
+                <span>{coin.symbol.toUpperCase()}</span>
+            </h3>
             <p>${coin.current_price.toFixed(2)}</p>
             <p>${formatMarketCap(coin.market_cap)}</p>
-            <p>
+            <p className={coin.price_change_percentage_24h >= 0 ? "positive" : "negative"}>
                 {coin.price_change_percentage_24h >= 0 ? "+" : ""}
                 {coin.price_change_percentage_24h.toFixed(2)}%
             </p>
