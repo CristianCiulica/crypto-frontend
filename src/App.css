@@ -1,22 +1,150 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px;
+  background-color: #0b0e17;
+  color: #e8eaf0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 40px;
+  height: 64px;
+  border-bottom: 1px solid #1e2433;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #0b0e17;
 }
+
+header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+/* Nav */
 
 nav {
   display: flex;
-  gap: 20px;
+  gap: 32px;
+}
+
+nav a {
+  color: #8892a4;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: #e8eaf0;
+  border-bottom-color: #5c4dff;
+}
+
+.markets-header {
+  padding: 40px 40px 0;
+}
+
+.markets-header h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #e8eaf0;
+}
+
+.markets-header p {
+  margin: 0;
+  color: #5a6478;
+  font-size: 14px;
 }
 
 .coin-list {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 16px;
+  padding: 28px 40px 60px;
 }
+
 .coin-card {
-  border: 1px solid #ddd;
-  padding: 20px;
+  background-color: #131722;
+  border: 1px solid #1e2433;
   border-radius: 12px;
+  padding: 24px;
   width: 220px;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.coin-card:hover {
+  border-color: #5c4dff;
+  transform: translateY(-2px);
+}
+
+.coin-card h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8eaf0;
+}
+
+.coin-card h3 span {
+  font-size: 11px;
+  font-weight: 500;
+  color: #5a6478;
+  background-color: #1a1f2e;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.coin-card p {
+  margin: 0 0 8px;
+  color: #8892a4;
+  font-size: 13px;
+}
+
+.coin-card p:first-of-type {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.coin-card p:nth-of-type(2) {
+  font-size: 12px;
+  color: #5a6478;
+  margin-bottom: 14px;
+}
+
+.coin-card p.positive {
+  color: #26d97f;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.coin-card p.negative {
+  color: #f03c3c;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
 }
