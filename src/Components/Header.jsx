@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header>
-            <h1>Crypto Analytics</h1>
+            <h1>Crypto Aggregator</h1>
             <nav>
                 <a>Dashboard</a>
                 <a>Markets</a>
