@@ -4,7 +4,16 @@ import CoinCard from "./CoinCard.jsx";
 function CoinList() {
 
     const [coins, setCoins] = useState([]);
+    const [selectedCoin, setSelectedCoin] = useState(null);
+    const [priceHistory, setPriceHistory] = useState([]);
 
+    useEffect(() => {
+        if (!selectedCoin) {
+            return;
+        }
+
+        // aici va veni fetch-ul
+    }, [selectedCoin]);
     useEffect(() => {
         fetch("http://localhost:8080/api/coins")
             .then(response => response.json())
@@ -12,10 +21,27 @@ function CoinList() {
     }, []);
 
     return (<>
-        <h2>Markets</h2>
-        <section className="coin-list">
-            {coins.map(coin => (<CoinCard coin={coin} />))}
-        </section>
+            <div className="markets-header">
+                <div>
+                    <h2>Markets</h2>
+                    <p>Track cryptocurrency prices and market performance</p>
+                </div>
+            </div>
+
+            <section className="coin-list">
+            {coins.map(coin => (<CoinCard
+                key={coin.id}
+                coin={coin}
+                onSelect={() => setSelectedCoin(coin)}
+            />))}
+            </section>
+
+            {selectedCoin && (
+                <div className="selected-coin">
+                    <h2>{selectedCoin.name}</h2>
+                    <p>${selectedCoin.current_price.toFixed(2)}</p>
+                </div>
+            )}
         </>
     )
 }
