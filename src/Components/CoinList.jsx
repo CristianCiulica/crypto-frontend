@@ -12,8 +12,13 @@ function CoinList() {
             return;
         }
 
-        // aici va veni fetch-ul
+        fetch("http://localhost:8080/api/coins/" + selectedCoin.id + "/history?days=7")
+            .then(response => response.json())
+            .then(data => setPriceHistory(data))
+
     }, [selectedCoin]);
+
+
     useEffect(() => {
         fetch("http://localhost:8080/api/coins")
             .then(response => response.json())
