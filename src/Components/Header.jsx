@@ -1,8 +1,12 @@
 import { useState } from "react"
 
-function Header() {
+function Header({ activePage, onNavigate, searchQuery, onSearchChange }) {
     const [menuOpen, setMenuOpen] = useState(false)
 
+    const handleNav = (page) => {
+        onNavigate(page)
+        setMenuOpen(false)
+    }
     return (
         <>
             <header>
@@ -13,16 +17,21 @@ function Header() {
                     <span />
                 </button>
                 <nav className={menuOpen ? "mobile-menu open" : "mobile-menu"}>
-                    <a onClick={() => setMenuOpen(false)}>Dashboard</a>
-                    <a onClick={() => setMenuOpen(false)}>Markets</a>
-                    <a onClick={() => setMenuOpen(false)}>Market Sentiment</a>
-                    <a onClick={() => setMenuOpen(false)}>Price Prediction</a>
+                    <a className={activePage === "dashboard" ? "nav-active" : ""} onClick={() => handleNav("dashboard")}>Dashboard</a>
+                    <a className={activePage === "markets" ? "nav-active" : ""} onClick={() => handleNav("markets")}>Markets</a>
+                    <a className={activePage === "ai" ? "nav-active" : ""} onClick={() => handleNav("ai")}>AI Predict</a>
                     <label className="nav-search">
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <circle cx="10.8" cy="10.8" r="6.8" />
                             <path d="m16 16 5 5" />
                         </svg>
-                        <input type="search" placeholder="Search" aria-label="Search" />
+                        <input
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            value={searchQuery}
+                            onChange={(e) => onSearchChange(e.target.value)}
+                        />
                     </label>
                 </nav>
             </header>
