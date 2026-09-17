@@ -6,7 +6,6 @@ import DashboardPage from "./Components/DashboardPage.jsx";
 import MarketsPage from "./Components/MarketsPage.jsx";
 import AiPredictPage from "./Components/AiPredictPage.jsx";
 
-
 function safeFetch(url) {
     return fetch(url).then(async (response) => {
         const text = await response.text();
