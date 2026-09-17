@@ -104,7 +104,7 @@ function CoinList() {
             .finally(() => setIsHistoryLoading(false));
     }, [selectedCoin, selectedRange, historyRetry]);
 
-    
+
     return (<>
             <CoinTicker />
             <div className="markets-header">
