@@ -85,7 +85,7 @@ function CoinList() {
             })
             .finally(() => setCoinsLoading(false));
     }, [coinsRetry]);
-    
+
     useEffect(() => {
         if (!selectedCoin) return;
 
