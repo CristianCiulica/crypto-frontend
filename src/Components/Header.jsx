@@ -7,6 +7,7 @@ function Header({ activePage, onNavigate, searchQuery, onSearchChange }) {
         onNavigate(page)
         setMenuOpen(false)
     }
+    
     return (
         <>
             <header>
