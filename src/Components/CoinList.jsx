@@ -85,7 +85,6 @@ function CoinList() {
             })
             .finally(() => setCoinsLoading(false));
     }, [coinsRetry]);
-
     // --- Fetch price history when coin or range changes ---
     useEffect(() => {
         if (!selectedCoin) return;
