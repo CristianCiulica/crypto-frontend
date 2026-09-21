@@ -12,6 +12,7 @@ function safeFetch(url) {
         let data = null;
         try { data = JSON.parse(text); } catch { /* not JSON */ }
 
+
         if (!response.ok) {
             const msg = (data && data.error) || text || ("Server error: " + response.status);
             throw new Error(msg);
@@ -25,7 +26,7 @@ function safeFetch(url) {
 
 
 
-function App() {
+function App(){
     const [activePage, setActivePage] = useState("dashboard");
     const [searchQuery, setSearchQuery] = useState("");
 
