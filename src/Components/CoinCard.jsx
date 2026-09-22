@@ -1,6 +1,5 @@
 import CoinLogo from "./CoinLogo.jsx"
 
-
 function CoinCard({ coin , onSelect}) {
     return (
         <div className="coin-card" onClick={onSelect}>
