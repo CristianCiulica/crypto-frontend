@@ -11,8 +11,7 @@ function safeFetch(url) {
         const text = await response.text();
         let data = null;
         try { data = JSON.parse(text); } catch { /* not JSON */ }
-
-
+        
         if (!response.ok) {
             const msg = (data && data.error) || text || ("Server error: " + response.status);
             throw new Error(msg);
