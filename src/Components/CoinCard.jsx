@@ -12,7 +12,6 @@ function CoinCard({ coin , onSelect}) {
             </p>
         </div>
     )
-
 }
 
 function formatMarketCap(value) {
