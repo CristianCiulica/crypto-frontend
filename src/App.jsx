@@ -23,7 +23,6 @@ function safeFetch(url) {
     });
 }
 
-
 function App(){
     const [activePage, setActivePage] = useState("dashboard");
     const [searchQuery, setSearchQuery] = useState("");
