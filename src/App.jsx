@@ -31,7 +31,7 @@ function App(){
         setSearchQuery("");
     };
 
-    
+
     return <div>
         <Header
             activePage={activePage}
